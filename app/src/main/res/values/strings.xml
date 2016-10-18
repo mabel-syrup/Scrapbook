@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Scrapbook</string>
+    <string name="tag_prompt">Tags...</string>
+</resources>
