@@ -8,14 +8,21 @@ import android.net.Uri;
  */
 public class SQLIdea {
 
-    String mText;
+    //Tags for ideas
     String[] mTags;
-    Uri mImageURI;
 
-    public SQLIdea(String text, String[] tags, Uri imageURI) {
-        mText = text;
-        mTags = tags;
-        mImageURI = imageURI;
+    public String getTagString () {
+        String outString = "";
+        for (String tag: mTags) {
+
+            outString = outString + "|" + tag;
+
+        }
+        return outString;
+    }
+
+    public String[] getTagsFromString (String tagString) {
+        return tagString.split("|");
     }
 
 }

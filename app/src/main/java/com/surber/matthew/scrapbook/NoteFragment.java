@@ -8,6 +8,7 @@ import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 
 /**
@@ -17,15 +18,19 @@ public class NoteFragment extends Fragment {
 
     private EditText mNoteText;
     private EditText mTags;
+    private Button mOkButton;
 
-    private Idea note;
+    private Note note;
+
+    private String mText;
+    private String mTagText;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
     }
 
-
+    //Notes do not have images.  The Note fragment used to create a note gives no option for setting an image.
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -39,7 +44,7 @@ public class NoteFragment extends Fragment {
 
             @Override
             public void onTextChanged(CharSequence charSequence, int start, int count, int after) {
-                note.setText(charSequence);
+                mText = charSequence.toString();
             }
 
             @Override
@@ -57,7 +62,7 @@ public class NoteFragment extends Fragment {
 
             @Override
             public void onTextChanged(CharSequence charSequence, int start, int count, int after) {
-                note.interperateTags(charSequence);
+                mTagText = charSequence.toString();
             }
 
             @Override
@@ -65,7 +70,27 @@ public class NoteFragment extends Fragment {
                 //Blank
             }
         });
-
+        mOkButton = (Button) v.findViewById(R.id.accept_button);
+        mOkButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //Finalize the note when the user clicks ok.
+                //TODO: add in warning prompt?
+                compileNote();
+            }
+        });
         return v;
     }
+
+    private void compileNote () {
+        //Replace all spaces with | before storing the tags.  (Clears up any ambiguity)
+        //Like in other websites/programs, tags with spaces get split up.
+        //Underscores can be used to combine words
+        String mFormattedTags = mTagText.replaceAll(" ","|");
+        //Construct the note.
+        note = new Note(mText,mFormattedTags);
+        //TODO: return note as the result.
+    }
+
+
 }

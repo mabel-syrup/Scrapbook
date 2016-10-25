@@ -46,27 +46,30 @@ public class IdeasListAdapter extends CursorAdapter {
         TextView tagText = (TextView) view.findViewById(R.id.tag_text);
         ImageView thumbnail = (ImageView) view.findViewById(R.id.thumbnail);
 
-        noteText.setText(previewText(cursor.getString(TEXT_COL)));
+        //Set noteText to use a formatted "preview" of the text.
+        noteText.setText(
+                previewText(cursor.getString(TEXT_COL))
+        );
+        //Display the tags
         tagText.setText(cursor.getString(TAGS_COL));
+        //Display thumbnail of the image.
         thumbnail.setImageBitmap(findImage(cursor.getString(IMAGE_COL)));
     }
 
-    private Bitmap findImage (String path) {
+    private Bitmap findImage (String uri) {
 
-
-        BitmapFactory.Options bOptions = new BitmapFactory.Options();
-        bOptions.inJustDecodeBounds = true;
-        try {
-            return BitmapFactory.decodeFile(path);
-        } catch (Exception e) {
-            return null;
-        }
+        //TODO: locate file and use thumbnail
+        return null;
     }
 
+    //Returns text formatted to be used as a preview.
     private String previewText(String inText) {
         if(inText.length() < 100) {
+            //It's less than 100 characters, so it can just be displayed as-is.
             return inText;
         } else {
+            //Preview text is always <= 100 characters.
+            //If it goes over, it cuts it off at 97 characters and adds "..." to the end.
             return inText.substring(0,96) + "...";
         }
     }
