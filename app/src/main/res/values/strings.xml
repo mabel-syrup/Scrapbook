@@ -3,4 +3,8 @@
     <string name="tag_prompt">Tags...</string>
     <string name="add_note">New Note</string>
     <string name="add_picture">New Picture</string>
+    <string name="search_items">Filter</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

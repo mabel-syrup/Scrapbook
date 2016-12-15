@@ -8,9 +8,11 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.surber.matthew.scrapbook.MainActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@color/colorPrimaryHilight">
 
     <android.support.v7.widget.RecyclerView
+        android:id="@+id/scrapbook_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
@@ -27,13 +29,23 @@
             android:id="@+id/add_note_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@color/colorTertiary"
             android:text="@string/add_note"
             android:layout_weight="1"
             android:layout_gravity="start"/>
         <Button
+            android:id="@+id/search_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorTertiary"
+            android:text="@string/search_items"
+            android:layout_weight="1"
+            android:layout_gravity="center"/>
+        <Button
             android:id="@+id/add_picture_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@color/colorTertiary"
             android:text="@string/add_picture"
             android:layout_weight="1"
             android:layout_gravity="end"/>

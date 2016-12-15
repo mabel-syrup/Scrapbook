@@ -12,6 +12,10 @@ public class Idea {
     private String[] tags;
 
 
+    public Idea (String text){
+        this.text = text;
+    }
+
     public String getText() {
         return text;
     }

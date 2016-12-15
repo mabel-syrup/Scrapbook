@@ -2,13 +2,13 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    android:background="@color/colorAccent">
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="20dp"
-        android:background="@color/darkHilight"
         android:id="@+id/thumbnail"/>
     <TextView
         android:layout_toRightOf="@id/thumbnail"
@@ -18,7 +18,7 @@
         android:paddingBottom="10dp"
         android:gravity="top"
         android:id="@+id/text_preview"
-        android:background="@color/mediumHilight"
+        android:background="@color/colorAccentHilight"
         tools:text="WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW"/>
     <TextView
         android:layout_below="@id/text_preview"
@@ -29,7 +29,7 @@
         android:paddingBottom="5dp"
         android:gravity="bottom"
         android:id="@+id/tag_preview"
-        android:background="@color/darkHilight"
+        android:background="@color/colorAccentDark"
         tools:text="These Are Preview Tags"/>
 
 </RelativeLayout>

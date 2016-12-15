@@ -1,4 +1,4 @@
-package com.surber.matthew.scrapbook;
+package com.surber.matthew.scrapbook.old;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -11,10 +11,11 @@ import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
+
+import com.surber.matthew.scrapbook.R;
 
 import java.io.File;
 import java.util.UUID;

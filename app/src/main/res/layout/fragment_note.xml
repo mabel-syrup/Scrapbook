@@ -1,13 +1,14 @@
-<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+             xmlns:tools="http://schemas.android.com/tools"
+              android:orientation="vertical"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             tools:context="com.surber.matthew.scrapbook.NoteFragment">
 
-    <ImageView
-        android:id="@+id/picture"
+    <EditText
+        android:id="@+id/note_text"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/colorAccent"
         android:layout_weight="1"/>
 
     <LinearLayout
@@ -30,7 +31,5 @@
             android:text="@android:string/ok"/>
 
     </LinearLayout>
-
-
 
 </LinearLayout>
